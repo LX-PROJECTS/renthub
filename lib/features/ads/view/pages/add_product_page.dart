@@ -184,6 +184,8 @@ class AddProductPage extends HookConsumerWidget {
                                   userId: '123',
                                   description: descriptionController.text,
                                   price: double.parse(priceController.text),
+                                  dateCreated: DateTime.now(),
+                                  dateMoidified: DateTime.now(),
                                 ));
                             context.pushReplacement(MyProductsPage.routePath);
                           },

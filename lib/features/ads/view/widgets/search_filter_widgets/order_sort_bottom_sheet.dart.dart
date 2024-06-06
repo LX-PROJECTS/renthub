@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rent_hub/core/constants/filters_sort_constants/filter_sort.dart';
 import 'package:rent_hub/core/theme/app_theme.dart';
-import 'package:rent_hub/features/search/widgets/filter_widgets/bottom_sheet_btn_widget.dart';
-import 'package:rent_hub/features/search/widgets/filter_widgets/check_box_filter_widget.dart';
-import 'package:rent_hub/features/search/widgets/filter_widgets/choose_location_field_widget.dart';
-import 'package:rent_hub/features/search/widgets/filter_widgets/filter_sctn_widget.dart';
-import 'package:rent_hub/features/search/widgets/filter_widgets/tab_bar_widget.dart';
+import 'package:rent_hub/features/ads/view/widgets/search_filter_widgets/bottom_sheet_btn_widget.dart';
+import 'package:rent_hub/features/ads/view/widgets/search_filter_widgets/check_box_filter_widget.dart';
+import 'package:rent_hub/features/ads/view/widgets/search_filter_widgets/choose_location_field_widget.dart';
+import 'package:rent_hub/features/ads/view/widgets/search_filter_widgets/filter_sctn_widget.dart';
+import 'package:rent_hub/features/ads/view/widgets/search_filter_widgets/tab_bar_widget.dart';
 
 class OrderSortBottomSheet extends ConsumerWidget {
   const OrderSortBottomSheet({super.key});
