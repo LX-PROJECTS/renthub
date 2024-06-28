@@ -7,7 +7,7 @@ import 'package:rent_hub/features/authentication/service/account_details_service
 //upload image for cloud storage
 
 final class UploadImageUseCase {
-  Future<String> call({
+  Future<String?> call({
     required File image,
     required String userId,
   }) async {
@@ -18,10 +18,9 @@ final class UploadImageUseCase {
           userId: userId,
         );
       }
-      return '';
     } on BaseException catch (e) {
       SnackbarUtils.showError(e.message);
-      throw e.message;
     }
+    return null;
   }
 }

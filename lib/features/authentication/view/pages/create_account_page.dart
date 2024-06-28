@@ -104,20 +104,15 @@ class CreateAccountPage extends HookConsumerWidget {
                 child: MainBtnWidget(
                   onTap: () {
                     // name TextEditingController validation
-                    _formKey.currentState!.validate();
-                    // user id
-                    final userId =
-                        ref.read(authenticationProvider).phoneNumber!;
-                    // upload image
-                    ref.read(accountDetailsProvider.notifier).uploadImage(
-                        userId: userId,
-                        image: File(ref.read(imagePickerProvider)?.path ?? ""));
-                    // add user data
-                    ref.read(accountDetailsProvider.notifier).addData(
-                          userId: userId,
-                          userName: nameEditingController.text,
-                        );
-                    nameEditingController.clear();
+                    if (_formKey.currentState!.validate()) {
+                      // add user data
+                      ref.read(accountDetailsProvider.notifier).addData(
+                            userId:
+                                ref.read(authenticationProvider).phoneNumber!,
+                            userName: nameEditingController.text,
+                            image: ref.read(imagePickerProvider),
+                          );
+                    }
                   },
                   btnTxt: createAcConst.txtbtn,
                 ),

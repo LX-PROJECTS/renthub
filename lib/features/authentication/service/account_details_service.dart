@@ -17,21 +17,15 @@ final class AccountDetailsService {
   static final Reference storage =
       FirebaseStorage.instance.ref().child("profileImages");
 
-  static var firebaseStorageReference;
-
 // upload image to storage
   static Future<String> uploadImage({
     required File image,
     required String userId,
   }) async {
     try {
-      await AccountDetailsService.firebaseStorageReference
-          .child(userId)
-          .putFile(image);
+      await storage.child(userId).putFile(image);
 
-      return await AccountDetailsService.firebaseStorageReference
-          .child(userId)
-          .getDownloadURL();
+      return await storage.child(userId).getDownloadURL();
     } on FirebaseException catch (e) {
       throw StorageException(e.message);
     }
